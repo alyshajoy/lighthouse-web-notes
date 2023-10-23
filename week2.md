@@ -13,3 +13,8 @@
 * when using .filter, it won't modify the original array - you need to assign it to a new variable
 * using functional programming allows us to reuse small functions all over our code
   * this allows for less code to be written (and less logic required)
+
+
+### Recursion
+
+* use when the problem you are solving is just a smaller instance of the problem you have already solved
