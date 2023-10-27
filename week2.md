@@ -175,3 +175,24 @@ const sayGoodJob = name => `Good job ${name}`;
 * arrow functions are not hoisted
 
 
+# Object Oriented Programming
+
+### Classes
+
+* to declare a class, use the class keyword followed by the name of the class
+  * you can use any name, but a class name should always be a noun, and the first letter should always be capitalized
+* ie: class Pizza {};
+
+* to create a new object from a class, use the *new* keyword
+
+example: let pizza1 = new Pizza();
+         let pizza2 = new Pizza();
+
+* pizza1 and pizza2 are pizza objects
+* when you create an object using a class, it is an instance of that class
+* pizza1 and pizza2 are instances of the Pizza class
+* they are completely seperate objects, but in the same class
+* pizza1 !== pizza2
+
+* constructor keyword is used for setting default values for any new object's properties
+* everything inside the constructor method will get run for the new instance of class when we call the class
