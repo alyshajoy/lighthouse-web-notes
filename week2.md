@@ -173,3 +173,5 @@ console.log(sayGoodJob("Alysha")) // Good job, Alysha
 const sayGoodJob = name => `Good job ${name}`;
 
 * arrow functions are not hoisted
+
+
