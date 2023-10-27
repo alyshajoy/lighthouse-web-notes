@@ -129,3 +129,47 @@ for (const key in myObj){
   console.log('value', myObj[key]);
 }
 // returns list of keys, then a list of values
+
+
+
+## Thursday Lecture - Callbacks
+
+### Functions as Values
+
+**Function Declaration:**
+function sayHello(name) {};
+
+**Function Expression:**
+const sayHello(name) = function() {};
+
+#### Differences between function declarations and function expressions:
+
+* function expressions are not hoisted (hoisting is the ability to run a function before you declare it in the file)
+* function declarations are hoisted to the top of the code
+
+### Callback/Higher-Order Functions
+
+* callbacks are any functions we pass into other functions
+* higher order functions are any functions that follow at least one of the following rules:
+  * accepts a function as an argument (aka accepts a callback)
+  * returns a function as its result
+
+* when passing a function into another function, don't include the () -> that would run the function and put in whatever that function returned, and not the function itself
+
+### Arrow Functions
+
+const sayGoodJob = () => {};
+  * like saying: using these values (in the ()), run this code (in the {})
+
+const sayGoodJob = (name) => {
+  return `Good job, ${name}`;
+}
+
+console.log(sayGoodJob("Alysha")) // Good job, Alysha
+
+* if you have only one parameter in an arrow function, you don't need to include the parenthesis ()
+* if only one line, you don't need to include the curly braces {} or return keyword
+
+const sayGoodJob = name => `Good job ${name}`;
+
+* arrow functions are not hoisted
