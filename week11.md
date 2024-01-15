@@ -229,3 +229,40 @@ To use pagination:
 OFFSET page_number - 1 * amount_per_page;
 
 Aggregation functions: AVG(), MIN(), MAX(), SUM(), COUNT()
+
+
+# DATABASE DESIGN
+
+Databases are often the most important piece of an application (ie. emails, facebook, twitter, photo storage, patient records, etc.).
+
+### What is a relational database made up of?
+
+* Tables / Entities / Nouns
+* Each table has...
+  * columns / fields
+  * rows / records
+
+### Common Naming Conventions
+
+* changes depending on which database management system you use
+
+We will learn the conventions for PostgreSQL.
+* use snake case
+* match column names with table names (when columns are using foreign keys from other tables)
+
+Many to One:
+* where something from one column can be related to many items of another table
+
+One to One:
+* always a direct one to one
+* both tables can only have one possible connection
+
+
+### Data Types
+
+* https://www.postgresql.org/docs/current/datatype.html -> docs for postgres data types
+* there are way more than the ones we'll go over today
+
+Examples of Data Types:
+* integer
+* varchar (variable-length with limit)
