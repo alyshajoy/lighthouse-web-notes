@@ -177,3 +177,67 @@ Form.js:
 * so we have to go back to the closest common ancestor
 * in this example, move state: count up to App.js (just copy paste)
 * so very often, all of your state is going to live inside of App since it is the top level
+
+
+# State Management and Immutable Update Patterns
+
+* mutability vs immutability in JavaScript
+* React review
+* updating state of varying complexity
+
+### Primitives (Immutables)
+
+* Number
+* BigInt
+* String
+* Boolean
+* Symbol
+* Null
+* Undefined
+
+* **these are unchangeable!**
+  * passed by value
+  * cannot change value in stored memory
+
+### Complex Data Structures (Mutables)
+
+* objects
+* array
+* function
+
+* **we are able to change these!**
+  * passed by reference
+  * storing a reference to the array/object/function
+  * we can change their value in stored memory
+
+```javascript
+const array1 = [1, 2, 3, 4]
+const array2 = array1;
+
+array2.push(5);
+array2.push(6);
+
+console.log(array1); // [1, 2, 3, 4, 5, 6]
+console.log(array2); // [1, 2, 3, 4, 5, 6]
+
+console.log(array1 === array2); // TRUE - They both point to the same array in memory.
+
+console.log([1, 2, 3] === [1, 2, 3]) // FALSE - They are not the same array, because they are stored in two different places in memory.
+```
+
+```javascript
+const animals = ['dog', 'cat', 'fish', 'parrot'];
+const animalsFull = ['cow', 'horse', ...animals, 'elephant', 'tiger']; // spread operator copies the array into this new array (and places it in an actual new array in memory)
+```
+
+* weakness of spread operator:
+  * can only do first level of array
+  * can't do nested arrays/objects
+  * to fix this, you can use JSON.parse(JSON.stringify(array))
+    * this creates a new array, turns it all into a string, and then turns it all back to js
+    * this removes all nesting!
+  * downsides of this JSON method:
+    1. Not the most readable...
+    2. It can be sort of overkill.
+    3. It cannot handle functions/methods.
+
